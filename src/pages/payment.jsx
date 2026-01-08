@@ -21,11 +21,11 @@ const Payment = props => {
   // 模拟赛事数据
   const event = {
     id: eventId,
-    title: '中超联赛：北京国安 vs 上海申花',
+    title: '北京大学校园足球赛：计算机学院 vs 经济学院',
     date: '2026-01-15',
-    time: '19:30',
-    venue: '北京工人体育场',
-    price: 120
+    time: '14:30',
+    venue: '北京大学东操场',
+    price: 5
   };
   const totalPrice = event.price * ticketCount;
   const handlePayment = async () => {
@@ -51,10 +51,14 @@ const Payment = props => {
         description: "订单已确认，请查看个人中心"
       });
 
-      // 跳转到个人中心
+      // 跳转到电子票页面
       props.$w.utils.navigateTo({
-        pageId: 'profile',
-        params: {}
+        pageId: 'ticket',
+        params: {
+          eventId: event.id,
+          ticketCount,
+          seats: seats.join(',')
+        }
       });
     } catch (error) {
       toast({

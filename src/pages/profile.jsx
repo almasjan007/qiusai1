@@ -6,29 +6,34 @@ import { Card, CardContent, CardHeader, CardTitle, Button } from '@/components/u
 import { Calendar, MapPin, CheckCircle, Clock } from 'lucide-react';
 
 const Profile = props => {
-  const [orders, setOrders] = useState([{
-    id: 1,
-    eventTitle: '中超联赛：北京国安 vs 上海申花',
-    date: '2026-01-15',
-    time: '19:30',
-    venue: '北京工人体育场',
-    ticketCount: 2,
-    seats: ['A12', 'A13'],
-    totalPrice: 240,
-    status: 'completed',
-    orderDate: '2026-01-07'
-  }, {
-    id: 2,
-    eventTitle: 'CBA联赛：广东宏远 vs 辽宁本钢',
-    date: '2026-01-20',
-    time: '20:00',
-    venue: '广州体育馆',
-    ticketCount: 1,
-    seats: ['B05'],
-    totalPrice: 80,
-    status: 'pending',
-    orderDate: '2026-01-07'
-  }]);
+  const [orders, setOrders] = useState([]);
+
+  // 模拟从本地存储获取订单数据
+  useEffect(() => {
+    const savedOrders = localStorage.getItem('userOrders');
+    if (savedOrders) {
+      setOrders(JSON.parse(savedOrders));
+    } else {
+      // 默认订单数据
+      setOrders([{
+        id: 1,
+        eventTitle: '北京大学校园足球赛：计算机学院 vs 经济学院',
+        date: '2026-01-15',
+        time: '14:30',
+        venue: '北京大学东操场',
+        ticketCount: 2,
+        seats: ['1', '2'],
+        totalPrice: 10,
+        status: 'completed',
+        orderDate: '2026-01-08'
+      }]);
+    }
+  }, []);
+
+  // 监听订单变化并保存到本地存储
+  useEffect(() => {
+    localStorage.setItem('userOrders', JSON.stringify(orders));
+  }, [orders]);
   const currentUser = props.$w.auth.currentUser;
   const getStatusIcon = status => {
     switch (status) {
