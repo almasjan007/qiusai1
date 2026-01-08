@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, Button, Input, Label, useToas
 // @ts-ignore;
 import { Calendar, MapPin, ArrowLeft, Users, Ticket } from 'lucide-react';
 
+// @ts-ignore;
+import StadiumSeatMap from '@/components/StadiumSeatMap';
 const Booking = props => {
   const {
     toast
@@ -15,11 +17,11 @@ const Booking = props => {
   // 模拟赛事数据
   const event = {
     id: parseInt(props.$w.page.dataset.params.eventId) || 1,
-    title: '中超联赛：北京国安 vs 上海申花',
+    title: '北京大学校园足球赛：计算机学院 vs 经济学院',
     date: '2026-01-15',
-    time: '19:30',
-    venue: '北京工人体育场',
-    price: 120,
+    time: '14:30',
+    venue: '北京大学东操场',
+    price: 5,
     availableSeats: 45
   };
   const handleSeatSelect = seatNumber => {
@@ -114,45 +116,14 @@ const Booking = props => {
             </Card>
           </div>
 
-          {/* 座位选择 */}
+          {/* 球场座位图 */}
           <div className="lg:col-span-2">
             <Card>
               <CardHeader>
-                <CardTitle>选择座位</CardTitle>
+                <CardTitle>球场座位选择</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-center mb-8">
-                  <div className="w-32 h-8 bg-gray-200 mx-auto mb-4 rounded"></div>
-                  <p className="text-sm text-gray-600">舞台</p>
-                </div>
-
-                <div className="grid grid-cols-10 gap-2 max-w-2xl mx-auto">
-                  {Array.from({
-                  length: 100
-                }, (_, i) => {
-                  const seatNumber = i + 1;
-                  const isSelected = selectedSeats.includes(seatNumber);
-                  const isAvailable = seatNumber <= event.availableSeats;
-                  return <button key={seatNumber} className={`w-8 h-8 rounded text-xs font-medium transition-all ${isSelected ? 'bg-blue-600 text-white' : isAvailable ? 'bg-green-100 text-green-800 hover:bg-green-200' : 'bg-gray-200 text-gray-400 cursor-not-allowed'}`} onClick={() => isAvailable && handleSeatSelect(seatNumber)} disabled={!isAvailable}>
-                        {seatNumber}
-                      </button>;
-                })}
-                </div>
-
-                <div className="flex justify-center space-x-6 mt-8 text-sm">
-                  <div className="flex items-center">
-                    <div className="w-4 h-4 bg-green-100 rounded mr-2"></div>
-                    <span>可选</span>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-4 h-4 bg-blue-600 rounded mr-2"></div>
-                    <span>已选</span>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-4 h-4 bg-gray-200 rounded mr-2"></div>
-                    <span>已售</span>
-                  </div>
-                </div>
+                <StadiumSeatMap selectedSeats={selectedSeats} onSeatSelect={handleSeatSelect} availableSeats={event.availableSeats} maxSeats={100} />
               </CardContent>
             </Card>
           </div>

@@ -3,6 +3,7 @@ import BOOKING from '../pages/booking.jsx';
 import PAYMENT from '../pages/payment.jsx';
 import PROFILE from '../pages/profile.jsx';
 import CREATEEVENT from '../pages/createEvent.jsx';
+import TICKET from '../pages/ticket.jsx';
 export const routers = [{
   id: "home",
   component: HOME
@@ -18,4 +19,7 @@ export const routers = [{
 }, {
   id: "createEvent",
   component: CREATEEVENT
+}, {
+  id: "ticket",
+  component: TICKET
 }]
