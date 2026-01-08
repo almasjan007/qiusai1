@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 // @ts-ignore;
 import { Card, CardContent, CardHeader, CardTitle, Button } from '@/components/ui';
 // @ts-ignore;
-import { Calendar, MapPin, CheckCircle, Clock } from 'lucide-react';
+import { Calendar, MapPin, CheckCircle, Clock, Ticket } from 'lucide-react';
 
 const Profile = props => {
   const [orders, setOrders] = useState([]);
@@ -147,8 +147,21 @@ const Profile = props => {
                       <div className="text-sm text-gray-500">
                         下单时间：{order.orderDate}
                       </div>
-                      <div className="text-lg font-semibold text-blue-600">
-                        ¥{order.totalPrice}
+                      <div className="flex items-center space-x-2">
+                        <div className="text-lg font-semibold text-blue-600">
+                          ¥{order.totalPrice}
+                        </div>
+                        {order.status === 'completed' && <Button variant="outline" size="sm" onClick={() => props.$w.utils.navigateTo({
+                    pageId: 'ticket',
+                    params: {
+                      eventId: order.id,
+                      ticketCount: order.ticketCount,
+                      seats: order.seats.join(',')
+                    }
+                  })} className="flex items-center space-x-1">
+                            <Ticket className="w-3 h-3" />
+                            <span>查看电子票</span>
+                          </Button>}
                       </div>
                     </div>
                   </div>)}
