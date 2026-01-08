@@ -1,0 +1,77 @@
+[
+  {
+    "_id": "1",
+    "userId": "user001",
+    "nickname": "体育爱好者",
+    "avatar": "https://example.com/avatars/user001.jpg",
+    "phone": "13800138000",
+    "email": "user001@example.com",
+    "gender": "male",
+    "birthday": "1990-05-15",
+    "preferences": {
+      "favoriteSports": ["football", "basketball"],
+      "notification": {
+        "email": true,
+        "sms": false,
+        "push": true
+      },
+      "language": "zh-CN"
+    },
+    "points": 1500,
+    "level": "gold",
+    "lastLoginTime": 1736000000000,
+    "loginCount": 25,
+    "createdAt": 1736000000000,
+    "updatedAt": 1736000000000
+  },
+  {
+    "_id": "2",
+    "userId": "user002",
+    "nickname": "篮球迷",
+    "avatar": "https://example.com/avatars/user002.jpg",
+    "phone": "13900139000",
+    "email": "user002@example.com",
+    "gender": "female",
+    "birthday": "1995-08-20",
+    "preferences": {
+      "favoriteSports": ["basketball", "tennis"],
+      "notification": {
+        "email": true,
+        "sms": true,
+        "push": true
+      },
+      "language": "zh-CN"
+    },
+    "points": 800,
+    "level": "silver",
+    "lastLoginTime": 1735990000000,
+    "loginCount": 12,
+    "createdAt": 1735990000000,
+    "updatedAt": 1735990000000
+  },
+  {
+    "_id": "3",
+    "userId": "user003",
+    "nickname": "足球达人",
+    "avatar": "https://example.com/avatars/user003.jpg",
+    "phone": "13700137000",
+    "email": "user003@example.com",
+    "gender": "male",
+    "birthday": "1988-12-10",
+    "preferences": {
+      "favoriteSports": ["football", "badminton"],
+      "notification": {
+        "email": false,
+        "sms": true,
+        "push": false
+      },
+      "language": "zh-CN"
+    },
+    "points": 2000,
+    "level": "platinum",
+    "lastLoginTime": 1735980000000,
+    "loginCount": 45,
+    "createdAt": 1735980000000,
+    "updatedAt": 1735980000000
+  }
+]
