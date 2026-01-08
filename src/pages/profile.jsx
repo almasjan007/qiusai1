@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 // @ts-ignore;
 import { Card, CardContent, CardHeader, CardTitle, Button, Tabs, TabsContent, TabsList, TabsTrigger, Badge, useToast } from '@/components/ui';
 // @ts-ignore;
-import { Calendar, MapPin, CheckCircle, Clock, Ticket, Users, Package, Edit, Eye, Check, X, BarChart3 } from 'lucide-react';
+import { Calendar, MapPin, CheckCircle, Clock, Ticket, Users, Package, Edit, Eye, Check, X, BarChart3, LogOut } from 'lucide-react';
 
 const Profile = props => {
   const [orders, setOrders] = useState([]);
@@ -92,6 +92,30 @@ const Profile = props => {
   useEffect(() => {
     localStorage.setItem('userOrders', JSON.stringify(orders));
   }, [orders]);
+  // 退出登录功能
+  const handleLogout = async () => {
+    try {
+      const tcb = await props.$w.cloud.getCloudInstance();
+      await tcb.auth().signOut();
+      toast({
+        title: "退出成功",
+        description: "您已成功退出登录"
+      });
+
+      // 跳转到登录页面
+      props.$w.utils.redirectTo({
+        pageId: 'login',
+        params: {}
+      });
+    } catch (error) {
+      toast({
+        title: "退出失败",
+        description: "退出登录时发生错误",
+        variant: "destructive"
+      });
+    }
+  };
+
   // 管理员功能：审核比赛
   const handleApproveEvent = eventId => {
     setEvents(events.map(event => event._id === eventId ? {
@@ -187,16 +211,22 @@ const Profile = props => {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex items-center space-x-4">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
-                <span className="text-2xl font-bold text-blue-600">
-                  {currentUser?.name?.charAt(0) || 'U'}
-                </span>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-4">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
+                  <span className="text-2xl font-bold text-blue-600">
+                    {currentUser?.name?.charAt(0) || 'U'}
+                  </span>
+                </div>
+                <div>
+                  <h2 className="text-xl font-semibold">{currentUser?.name || '游客'}</h2>
+                  <p className="text-gray-600">{currentUser?.nickName || '未设置昵称'}</p>
+                </div>
               </div>
-              <div>
-                <h2 className="text-xl font-semibold">{currentUser?.name || '游客'}</h2>
-                <p className="text-gray-600">{currentUser?.nickName || '未设置昵称'}</p>
-              </div>
+              <Button variant="outline" onClick={handleLogout} className="flex items-center space-x-2 text-red-600 border-red-200 hover:bg-red-50">
+                <LogOut className="w-4 h-4" />
+                <span>退出登录</span>
+              </Button>
             </div>
           </CardContent>
         </Card>

@@ -45,6 +45,20 @@ export const Navbar = props => {
             })} className="text-gray-600 hover:text-blue-600 hover:bg-blue-50">
                   个人中心
                 </Button>
+                <Button variant="outline" size="sm" onClick={async () => {
+              try {
+                const tcb = await props.$w.cloud.getCloudInstance();
+                await tcb.auth().signOut();
+                props.$w.utils.redirectTo({
+                  pageId: 'login',
+                  params: {}
+                });
+              } catch (error) {
+                console.error('Logout failed:', error);
+              }
+            }} className="text-gray-600 hover:text-red-600 hover:bg-red-50">
+                  退出
+                </Button>
               </div> : <div className="flex space-x-2">
                 <Button variant="outline" className="text-blue-600 border-blue-600 hover:bg-blue-50">
                   登录
