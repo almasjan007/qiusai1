@@ -1,0 +1,41 @@
+{
+  "name": "inventory",
+  "title": "库存",
+  "schemas": [
+    {
+      "name": "eventId",
+      "title": "赛事ID",
+      "type": "String"
+    },
+    {
+      "name": "seatNumber",
+      "title": "座位号",
+      "type": "String"
+    },
+    {
+      "name": "status",
+      "title": "座位状态",
+      "type": "String"
+    },
+    {
+      "name": "price",
+      "title": "座位价格",
+      "type": "Number"
+    },
+    {
+      "name": "section",
+      "title": "区域",
+      "type": "String"
+    },
+    {
+      "name": "row",
+      "title": "排号",
+      "type": "String"
+    },
+    {
+      "name": "seatType",
+      "title": "座位类型",
+      "type": "String"
+    }
+  ]
+}

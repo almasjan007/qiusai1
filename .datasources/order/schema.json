@@ -1,0 +1,76 @@
+{
+  "name": "order",
+  "title": "订单",
+  "schemas": [
+    {
+      "name": "eventId",
+      "title": "赛事ID",
+      "type": "String"
+    },
+    {
+      "name": "eventTitle",
+      "title": "赛事标题",
+      "type": "String"
+    },
+    {
+      "name": "eventDate",
+      "title": "赛事日期",
+      "type": "Date",
+      "format": "date"
+    },
+    {
+      "name": "eventTime",
+      "title": "赛事时间",
+      "type": "String"
+    },
+    {
+      "name": "venue",
+      "title": "场馆地址",
+      "type": "String"
+    },
+    {
+      "name": "ticketCount",
+      "title": "票数",
+      "type": "Number"
+    },
+    {
+      "name": "seats",
+      "title": "座位号",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "unitPrice",
+      "title": "单价",
+      "type": "Number"
+    },
+    {
+      "name": "totalPrice",
+      "title": "总价",
+      "type": "Number"
+    },
+    {
+      "name": "orderDate",
+      "title": "下单日期",
+      "type": "Date",
+      "format": "date"
+    },
+    {
+      "name": "status",
+      "title": "订单状态",
+      "type": "String"
+    },
+    {
+      "name": "paymentMethod",
+      "title": "支付方式",
+      "type": "String"
+    },
+    {
+      "name": "ticketNumber",
+      "title": "票号",
+      "type": "String"
+    }
+  ]
+}

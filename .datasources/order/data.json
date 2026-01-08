@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "1",
+    "eventId": "1",
+    "eventTitle": "北京大学校园足球赛：计算机学院 vs 经济学院",
+    "eventDate": "2026-01-15",
+    "eventTime": "14:30",
+    "venue": "北京大学东操场",
+    "ticketCount": 2,
+    "seats": ["1", "2"],
+    "unitPrice": 5,
+    "totalPrice": 10,
+    "orderDate": "2026-01-08",
+    "status": "completed",
+    "paymentMethod": "alipay",
+    "ticketNumber": "TKT1736294400000ABC123",
+    "createdAt": 1736294400000,
+    "updatedAt": 1736294400000
+  },
+  {
+    "_id": "2",
+    "eventId": "2",
+    "eventTitle": "北京市中学生篮球联赛：四中 vs 人大附中",
+    "eventDate": "2026-01-20",
+    "eventTime": "16:00",
+    "venue": "北京四中体育馆",
+    "ticketCount": 1,
+    "seats": ["5"],
+    "unitPrice": 15,
+    "totalPrice": 15,
+    "orderDate": "2026-01-08",
+    "status": "pending",
+    "paymentMethod": "",
+    "ticketNumber": "",
+    "createdAt": 1736294400000,
+    "updatedAt": 1736294400000
+  }
+]

@@ -1,0 +1,72 @@
+{
+  "name": "event",
+  "title": "赛事",
+  "schemas": [
+    {
+      "name": "title",
+      "title": "赛事标题",
+      "type": "String"
+    },
+    {
+      "name": "description",
+      "title": "赛事描述",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "date",
+      "title": "赛事日期",
+      "type": "Date",
+      "format": "date"
+    },
+    {
+      "name": "time",
+      "title": "开始时间",
+      "type": "String"
+    },
+    {
+      "name": "venue",
+      "title": "场馆地址",
+      "type": "String"
+    },
+    {
+      "name": "price",
+      "title": "票价",
+      "type": "Number"
+    },
+    {
+      "name": "totalSeats",
+      "title": "总座位数",
+      "type": "Number"
+    },
+    {
+      "name": "availableSeats",
+      "title": "可售座位数",
+      "type": "Number"
+    },
+    {
+      "name": "sportType",
+      "title": "运动类型",
+      "type": "String"
+    },
+    {
+      "name": "image",
+      "title": "赛事图片",
+      "type": "Image"
+    },
+    {
+      "name": "isHot",
+      "title": "热门赛事",
+      "type": "Boolean"
+    },
+    {
+      "name": "rating",
+      "title": "评分",
+      "type": "Number"
+    },
+    {
+      "name": "status",
+      "title": "赛事状态",
+      "type": "String"
+    }
+  ]
+}

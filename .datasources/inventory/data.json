@@ -1,0 +1,86 @@
+[
+  {
+    "_id": "1",
+    "eventId": "1",
+    "seatNumber": "1",
+    "status": "available",
+    "price": 5,
+    "section": "A",
+    "row": "1",
+    "seatType": "standard",
+    "createdAt": 1736294400000,
+    "updatedAt": 1736294400000
+  },
+  {
+    "_id": "2",
+    "eventId": "1",
+    "seatNumber": "2",
+    "status": "available",
+    "price": 5,
+    "section": "A",
+    "row": "1",
+    "seatType": "standard",
+    "createdAt": 1736294400000,
+    "updatedAt": 1736294400000
+  },
+  {
+    "_id": "3",
+    "eventId": "1",
+    "seatNumber": "3",
+    "status": "available",
+    "price": 5,
+    "section": "A",
+    "row": "1",
+    "seatType": "standard",
+    "createdAt": 1736294400000,
+    "updatedAt": 1736294400000
+  },
+  {
+    "_id": "4",
+    "eventId": "1",
+    "seatNumber": "4",
+    "status": "available",
+    "price": 5,
+    "section": "A",
+    "row": "1",
+    "seatType": "standard",
+    "createdAt": 1736294400000,
+    "updatedAt": 1736294400000
+  },
+  {
+    "_id": "5",
+    "eventId": "1",
+    "seatNumber": "5",
+    "status": "available",
+    "price": 5,
+    "section": "A",
+    "row": "1",
+    "seatType": "standard",
+    "createdAt": 1736294400000,
+    "updatedAt": 1736294400000
+  },
+  {
+    "_id": "6",
+    "eventId": "2",
+    "seatNumber": "1",
+    "status": "available",
+    "price": 15,
+    "section": "B",
+    "row": "1",
+    "seatType": "vip",
+    "createdAt": 1736294400000,
+    "updatedAt": 1736294400000
+  },
+  {
+    "_id": "7",
+    "eventId": "2",
+    "seatNumber": "2",
+    "status": "available",
+    "price": 15,
+    "section": "B",
+    "row": "1",
+    "seatType": "vip",
+    "createdAt": 1736294400000,
+    "updatedAt": 1736294400000
+  }
+]
