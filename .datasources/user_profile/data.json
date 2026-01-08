@@ -73,5 +73,30 @@
     "loginCount": 45,
     "createdAt": 1735980000000,
     "updatedAt": 1735980000000
+  },
+  {
+    "_id": "4",
+    "userId": "administrator",
+    "nickname": "系统管理员",
+    "avatar": "https://example.com/avatars/admin.jpg",
+    "phone": "13600136000",
+    "email": "admin@ticketsystem.com",
+    "gender": "male",
+    "birthday": "1985-01-01",
+    "preferences": {
+      "favoriteSports": ["all"],
+      "notification": {
+        "email": true,
+        "sms": true,
+        "push": true
+      },
+      "language": "zh-CN"
+    },
+    "points": 9999,
+    "level": "admin",
+    "lastLoginTime": 1736100000000,
+    "loginCount": 156,
+    "createdAt": 1736100000000,
+    "updatedAt": 1736100000000
   }
 ]
