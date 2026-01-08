@@ -18,7 +18,7 @@ const Profile = props => {
   const currentUser = props.$w.auth.currentUser;
 
   // 模拟用户角色（实际应用中应从用户信息获取）
-  const userRole = currentUser?.type === 'admin' ? 'admin' : currentUser?.type === 'organizer' ? 'organizer' : 'user';
+  const userRole = currentUser?.type === 'administrator' ? 'organizer' : currentUser?.type === 'organizer' ? 'organizer' : 'user';
 
   // 模拟从本地存储获取订单数据
   useEffect(() => {
@@ -181,8 +181,8 @@ const Profile = props => {
           <CardHeader>
             <CardTitle className="flex items-center justify-between">
               <span>个人信息</span>
-              <Badge variant={userRole === 'admin' ? 'destructive' : userRole === 'organizer' ? 'secondary' : 'default'}>
-                {userRole === 'admin' ? '管理员' : userRole === 'organizer' ? '发布者' : '普通用户'}
+              <Badge variant={userRole === 'organizer' ? 'secondary' : 'default'}>
+                {userRole === 'organizer' ? '主办方' : '普通用户'}
               </Badge>
             </CardTitle>
           </CardHeader>
@@ -205,8 +205,7 @@ const Profile = props => {
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
           <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="personal">个人中心</TabsTrigger>
-            {(userRole === 'admin' || userRole === 'organizer') && <TabsTrigger value="organizer">发布者管理</TabsTrigger>}
-            {userRole === 'admin' && <TabsTrigger value="admin">管理员审核</TabsTrigger>}
+            {userRole === 'organizer' && <TabsTrigger value="organizer">主办方管理</TabsTrigger>}
           </TabsList>
 
           {/* 个人中心标签页 */}
@@ -287,8 +286,8 @@ const Profile = props => {
             </Card>
           </TabsContent>
 
-          {/* 发布者管理标签页 */}
-          {(userRole === 'admin' || userRole === 'organizer') && <TabsContent value="organizer">
+          {/* 主办方管理标签页 */}
+          {userRole === 'organizer' && <TabsContent value="organizer">
               <div className="space-y-6">
                 {/* 票务库存管理 */}
                 <Card>
@@ -406,8 +405,8 @@ const Profile = props => {
               </div>
             </TabsContent>}
 
-          {/* 管理员审核标签页 */}
-          {userRole === 'admin' && <TabsContent value="admin">
+          {/* 主办方审核标签页 */}
+          {userRole === 'organizer' && <TabsContent value="admin">
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
